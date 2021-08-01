@@ -1,4 +1,21 @@
 example:
-  key1: {cipher}6b352852b8dff65fa01830bec6a08b9718754dec83e492174ae4ff01a0896fe1b8f142f280e96361c0ace51fc172bf0a
-  key2: {cipher}39ffe1befccb7ddda1f4522650fdab889ce3248b4a7dc897df597343398b5330011d380278d7803cd15da1b98d0e11c2
-  key3: {cipher}df5f9b6aca3b1f53de955772b214232829aae17f39dc3ab028bfe2f1ee286ce7038c4df848415f34d299ab9794e7d909
+  key1: '{cipher}6b352852b8dff65fa01830bec6a08b9718754dec83e492174ae4ff01a0896fe1b8f142f280e96361c0ace51fc172bf0a'
+  key2: '{cipher}39ffe1befccb7ddda1f4522650fdab889ce3248b4a7dc897df597343398b5330011d380278d7803cd15da1b98d0e11c2'
+  key3: '{cipher}df5f9b6aca3b1f53de955772b214232829aae17f39dc3ab028bfe2f1ee286ce7038c4df848415f34d299ab9794e7d909'
+
+
+# https://cloud.spring.io/spring-cloud-config/reference/html/#_encryption_and_decryption
+
+# If you are setting up a remote config repository for config client applications it might contain an application.yml like this, for instance:
+
+# spring:
+#  datasource:
+#    username: dbuser
+#    password: '{cipher}FKSAJDFGYOS8F7GLHAKERGFHLSAJ'
+
+# Watch out the qutoe !
+
+# Encrypted values in a .properties file must not be wrapped in quotes, otherwise the value will not be decrypted:
+
+#spring.datasource.username: dbuser
+# spring.datasource.password: {cipher}FKSAJDFGYOS8F7GLHAKERGFHLSAJ
